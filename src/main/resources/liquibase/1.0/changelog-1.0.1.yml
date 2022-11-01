@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: Creating doctors table
+      author: Elshan Hacaliyev
+      changes:
+        - createTable:
+            tableName: doctors
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: specialization
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: phone_no
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: available
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+
+            remarks: Table to store doctors information # Keeps information about table
+            schemaName: public # schema name

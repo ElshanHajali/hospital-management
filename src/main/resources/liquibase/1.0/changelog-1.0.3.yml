@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: Creating rooms table
+      author: Elshan Hacaliyev
+      changes:
+        - createTable:
+            tableName: rooms
+            columns:
+              - column:
+                  name: num
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: location
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: available
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+
+            remarks: Table to store rooms information # Keeps information about table
+            schemaName: public # schema name

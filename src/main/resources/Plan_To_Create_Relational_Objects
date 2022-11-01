@@ -1,0 +1,10 @@
+Relational Responsibilities for each individual entities:
+
+Receptionist creates/registers/adds -> patient
+
+Bill creates/registers/adds -> receptionist
+
+Doctors creates/registers/adds -> patients and departments
+
+Patient adds -> detail, set of room ids and bill ids
+

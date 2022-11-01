@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: Creating patients table
+      author: Elshan Hacaliyev
+      changes:
+        - createTable:
+            tableName: patients
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: phone_no
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: doctor_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_patients_to_doctors
+                    references: doctors(id)
+                    nullable: true
+              - column:
+                  name: receptionist_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_patients_to_receptionists
+                    references: receptionists(id)
+                    nullable: true
+
+            remarks: Table to store patients information # Keeps information about table
+            schemaName: public # schema name

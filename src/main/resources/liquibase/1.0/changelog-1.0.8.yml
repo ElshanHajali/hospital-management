@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: Creating patients_bills table
+      author: Elshan Hacaliyev
+      changes:
+        - createTable:
+            tableName: patients_bills
+            columns:
+              - column:
+                  name: bill_num
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_patients_bills_to_bills
+                    references: bills(num)
+                    nullable: true
+              - column:
+                  name: patient_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_patients_bills_to_patients
+                    references: patients(id)
+                    nullable: true
+
+            remarks: Table to store patients_bills information # Keeps information about table
+            schemaName: public # schema name

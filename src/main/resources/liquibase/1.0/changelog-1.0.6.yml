@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: Creating patient_details table
+      author: Elshan Hacaliyev
+      changes:
+        - createTable:
+            tableName: patient_details
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    foreignKeyName: fk_patient_details_to_patients
+                    references: patients(id)
+                    nullable: false
+              - column:
+                  name: address
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: age
+                  type: tinyint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: sex
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: balance
+                  type: number(16, 2)
+                  constraints:
+                    nullable: false
+
+            remarks: Table to store patient_details information # Keeps information about table
+            schemaName: public # schema name

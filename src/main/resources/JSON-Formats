@@ -1,0 +1,52 @@
+// JSON format to create bill object
+//{
+//    "paidAmount" : ,
+//    "queueNo" : ,
+//    "receptionists" : [ID...]
+//}
+
+// JSON format to create department object
+//{
+//    "name" : "",
+//    "doctor" : ID
+//}
+
+// JSON format to create doctor object
+//{
+//    "name" : "",
+//    "specialization" : "",
+//    "phoneNo" : "",
+//    "patients" : [ID...] ,
+//    "departments" : [ID...]
+//}
+
+// JSON format to create patient detail object
+//{
+//    "address" : "",
+//    "age" : ,
+//    "sex" : "",
+//    "balance" : ,
+//    "patient" : ID
+//}
+
+// JSON format to create patient object
+//{
+//    "name" : "",
+//    "phoneNo" : "",
+//    "patientDetail" : ID,
+//    "doctor" : ID,
+//    "receptionist" : ID,
+//    "rooms" : [ID...] ,
+//    "bills" : [ID...]
+//}
+
+// JSON format to create receptionist object
+//{
+//    "name" : ,
+//    "patients" : [ID...]
+//}
+
+// JSON format to create room object
+//{
+//    "location" : ,
+//}

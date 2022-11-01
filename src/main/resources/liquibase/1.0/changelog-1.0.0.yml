@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: Creating bills table
+      author: Elshan Hacaliyev
+      changes:
+        - createTable:
+            tableName: bills
+            columns:
+              - column:
+                  name: num
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: paid_amount
+                  type: number(16,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: paid
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: requested_at
+                  type: timestamptz
+                  defaultValueDate: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: queue_no
+                  type: bigint
+                  defaultValueNumeric: 1
+                  constraints:
+                    nullable: true
+
+            remarks: Table to store bills information # Keeps information about table
+            schemaName: public # schema name
